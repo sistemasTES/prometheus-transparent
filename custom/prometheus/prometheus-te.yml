@@ -1,0 +1,57 @@
+global:
+  scrape_interval: 10s
+
+# Change XX by your Company ID number (example: 82)
+scrape_configs:
+  - job_name: "prometheus-te_XX"
+    static_configs:
+      - targets: ["api.transparentcdn.com"]
+    scheme: https
+    tls_config:
+      insecure_skip_verify: true
+    metrics_path: "v1/statistics/metrics/XX/prometheus"
+
+    oauth2:
+      client_id: "Replace_by_your_CID_gotten_from_Dashboard"
+      client_secret: "Replace_by_your_CSECRET_gotten_from_Dashboard"
+      token_url: "https://api.transparentcdn.com/v1/oauth2/access_token/"
+      scopes:
+        - "read"
+      tls_config:
+        insecure_skip_verify: true
+
+####### When your user is allowed to get metrics from more companies, you can add them here:
+  # - job_name: "prometheus-te_XXX"
+  #   static_configs:
+  #     - targets: ["api.transparentcdn.com"]
+  #   scheme: https
+  #   tls_config:
+  #     insecure_skip_verify: true
+  #   metrics_path: "v1/statistics/metrics/XXX/prometheus"
+
+  #   oauth2:
+  #     client_id: "Replace_by_your_CID_gotten_from_Dashboard"
+  #     client_secret: "Replace_by_your_CSECRET_gotten_from_Dashboard"
+  #     token_url: "https://api.transparentcdn.com/v1/oauth2/access_token/"
+  #     scopes:
+  #       - "read"
+  #     tls_config:
+  #       insecure_skip_verify: true
+
+  # - job_name: "prometheus-te_XXX"
+  #   static_configs:
+  #     - targets: ["api.transparentcdn.com"]
+  #   scheme: https
+  #   tls_config:
+  #     insecure_skip_verify: true
+  #   metrics_path: "v1/statistics/metrics/XXX/prometheus"
+
+  #   oauth2:
+  #     client_id: "Replace_by_your_CID_gotten_from_Dashboard"
+  #     client_secret: "Replace_by_your_CSECRET_gotten_from_Dashboard"
+  #     token_url: "https://api.transparentcdn.com/v1/oauth2/access_token/"
+  #     scopes:
+  #       - "read"
+  #     tls_config:
+  #       insecure_skip_verify: true
+

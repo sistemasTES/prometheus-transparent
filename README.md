@@ -5,7 +5,7 @@ Easy ready-to-run docker-compose stack to get and parse metrics from Transparent
 ## Getting started
 
 - You need a valid `CID` and `CSECRET` pair. You can get them from T.E. Dashboard
-- Clone this repo and edit the `datasource.yml` file with your own secret data.
+- Clone this repo and edit `custom/prometheus/prometheus-te.yml` file with your own secret data.
 - Run it! with `docker compose up -d`
 
 ## Folder structure
